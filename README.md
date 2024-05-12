@@ -55,10 +55,10 @@ Next you are going to have to install your development environment tools.  Again
 
 A few notes about the instructions:
 
-	- It is also going to ask you to install a "code editor"; for the time being, use the free Visual Studio Code.  In the future, you are going to learn about the many options you have [2].  
-	- Docker is also mentioned; install it. It’s not immediately necessary, but it will be beneficial later.
-	- You don't have to worry about databases yet, or about GPU acceleration.  
-	- You should learn the WSL commmands, but we will discuss those later.
+- It is also going to ask you to install a "code editor"; for the time being, use the free Visual Studio Code.  In the future, you are going to learn about the many options you have [2].  
+- Docker is also mentioned; install it. It’s not immediately necessary, but it will be beneficial later.
+- You don't have to worry about databases yet, or about GPU acceleration.  
+- You should learn the WSL commmands, but we will discuss those later.
 
 Finally, you can install Git using the [tutorial here](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git).  You can ignore anything that suggests you make a Github account; Microsoft owns Github now (so of course they would tell you to get an account).  You also can ignore the part about Git Credential Manager, it has nothing to do with your work for now.
 

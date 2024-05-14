@@ -82,3 +82,239 @@ MicrosoftはWindows Subsystem for Linux（WSL）をインストールするた�
 最後に、[こちらのチュートリアル](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-git)を使用してGitをインストールできます。GitHubアカウントを作成するように提案されても無視してください。 (MicrosoftがGitHubを所有しているため、アカウントを取得するように勧めるのは当然のことです。)また、Git Credential Managerについても、今のところあなたの仕事には関係ないので無視してください。
 
 [2] If someone ever suggests you should install Eclipse, nod politely; however please note that the suggestions makes them untrustworthy.　もし誰かがEclipseのインストールを勧めたら、礼儀正しく反応してください。しかし、その提案をする人は信頼できないことを覚えておいてください。
+
+
+# My First Git
+
+There are many common myths about Git. It is not only for programming, and you do not need an account on any service; you can use Git on your own computer.
+
+Let's start by creating a text file. You can do this using Notepad or tools such as Notepad++ or Sublime Text.[3]
+
+Let's save it to a new directory inside of the Documents directory. When saving, you need to create a new directory. Let's call that directory "MeiProject1". Create a file inside called "test.txt", and put in the following text.
+
+```
+Hello World: Version 1
+```
+
+You can now save it.
+
+Now that you have saved the file, you need to go to the directory.
+
+From the Windows Menu, select "WSL" or "Ubuntu" (or whatever your WSL distribution is named). If you don't see it, type it in the search bar.
+
+When the WSL terminal opens, you need to navigate to the directory where you saved your file. You can do this using the `cd` command, which stands for "change directory."
+
+First, navigate to the Windows file system. Typically, your Windows files are located in `/mnt/c/Users/<YourUsername>/Documents`. You can replace `<YourUsername>` with your actual Windows username. For example:
+
+```sh
+cd /mnt/c/Users/<YourUsername>/Documents/MeiProject1
+```
+
+This command will change your current directory to the "MeiProject1" directory inside your "Documents" folder.
+
+Now that you are in the correct directory, we need to initialize a Git repository.
+
+### What is a Git Repository?
+
+Think of a Git repository like a special notebook where you keep track of all the changes to your documents. Just like you might use different sections of a notebook to write drafts and final versions of a story, a Git repository helps you keep track of different versions of your files. You can think of the initial setup as creating a new, empty notebook.
+
+To initialize (or set up) a new Git repository, type the following command:
+
+```sh
+git init
+```
+
+This command will create an empty Git repository in the "MeiProject1" directory. It's like opening a new notebook where you can start recording changes to your files.
+
+### Staging and Committing Files
+
+Next, let's add your text file to the repository. Type the following command:
+
+```sh
+git add test.txt
+```
+
+Adding a file to the repository using `git add` stages the file. Staging is like putting a sticky note on the page of your notebook to mark it for future reference. The file is now ready to be committed.
+
+Committing is like writing an entry in the table of contents of your notebook, noting what changes were made and when. This way, you can easily find and refer back to specific changes later.
+
+To save the current state of your files in the repository, you need to commit them. Type the following command:
+
+```sh
+git commit -m "Initial commit with test.txt"
+```
+
+The `-m` flag allows you to include a message with your commit. This message should describe what changes are included in this commit. Here, we’ve used "Initial commit with test.txt" as our message.
+
+### Branches
+
+Now, let's create a new branch. Branches in Git allow you to work on different versions of a project simultaneously. Think of a branch as a separate section of your notebook where you can experiment with new ideas without changing the original story. Type the following command to create a new branch called "new-feature":
+
+```sh
+git branch new-feature
+```
+
+To switch to this new branch, type the following command:
+
+```sh
+git checkout new-feature
+```
+
+Now you are on the "new-feature" branch. Let's make a change to the `test.txt` file. Open `test.txt` in your text editor, change the text to the following, and save it:
+
+```
+Hello World: Version 2
+```
+
+After saving the file, add and commit the change:
+
+```sh
+git add test.txt
+git commit -m "Updated to Version 2"
+```
+
+Now let's switch back to the main branch to see the difference. Type the following command to switch back to the main branch:
+
+```sh
+git checkout main
+```
+
+To see the difference between the versions of the `test.txt` file in the "main" and "new-feature" branches, use the following command:
+
+```sh
+git diff new-feature test.txt
+```
+
+This command will show you the differences between the `test.txt` file in the "new-feature" branch and the `test.txt` file in the current branch (which is "main"). It's like comparing the drafts of your story in different sections of your notebook.
+
+Congratulations! You have successfully:
+
+- Created a Git repository.
+- Added files using `git add`.
+- Committed files using `git commit`.
+- Created a branch using `git branch`.
+- Switched branches using `git checkout`.
+- Seen the difference between files in different branches using `git diff`.
+
+Feel free to experiment more with Git and see what else you can do!
+
+[3] Mind you, you should not use Microsoft Word. Without getting into too much detail, Word can save in formats such as .doc (which is a binary format) and .docx (which is based on XML, which introduces complexity). Use a plain text editor, you will be happier.
+
+
+# はじめてのGit
+
+Gitには多くの一般的な誤解があります。Gitはプログラミング専用のツールではないし、Gitを使うためにどのサービスにもアカウントを作成する必要はありません。自分のコンピューターでGitを使うことができます。
+
+まず、テキストファイルを作成しましょう。これにはメモ帳や、Notepad++、Sublime Textなどのツールを使用できます。[3]
+
+このファイルを、ドキュメントフォルダー内の新しいディレクトリに保存します。保存する際には、新しいディレクトリを作成する必要があります。このディレクトリを「MeiProject1」と名付けます。その中に「test.txt」という名前のファイルを作成し、次のテキストを入力します。
+
+```
+Hello World: Version 1
+```
+
+これでファイルを保存できます。
+
+ファイルを保存したら、そのディレクトリに移動する必要があります。
+
+Windowsメニューから「WSL」または「Ubuntu」（またはあなたのWSLディストリビューションの名前）を選択します。見つからない場合は、検索バーに入力してください。
+
+WSLターミナルが開いたら、ファイルを保存したディレクトリに移動する必要があります。これは、`cd`コマンドを使用して行います。`cd`は「ディレクトリを変更する」という意味です。
+
+まず、Windowsファイルシステムに移動します。通常、Windowsのファイルは`/mnt/c/Users/<YourUsername>/Documents`にあります。`<YourUsername>`をあなたの実際のWindowsユーザー名に置き換えます。例えば：
+
+```sh
+cd /mnt/c/Users/MeiComputerUser/Documents/MeiProject1
+```
+
+このコマンドは、現在のディレクトリを「ドキュメント」フォルダー内の「MeiProject1」ディレクトリに変更します。
+
+正しいディレクトリにいることを確認したら、Gitリポジトリ（保管庫）を初期化します。
+
+### Gitリポジトリ（保管庫）とは何ですか？
+
+Gitリポジトリ（保管庫）は、ドキュメントの変更をすべて記録するための特別なノートのようなものです。物語の草稿や最終版を異なるノートのセクションに書くのと同じように、Gitリポジトリ（保管庫）はファイルの異なるバージョンを追跡するのに役立ちます。初期設定を、新しい空のノートを作成することだと考えることができます。
+
+新しいGitリポジトリ（保管庫）を初期化するには、次のコマンドを入力します。
+
+```sh
+git init
+```
+
+このコマンドは、「MeiProject1」ディレクトリに空のGitリポジトリ（保管庫）を作成します。これは、ファイルの変更を記録し始めることができる新しいノートを開くようなものです。
+
+### ファイルのステージング（準備段階）とコミット（確定）
+
+次に、テキストファイルをリポジトリに追加します。次のコマンドを入力します。
+
+```sh
+git add test.txt
+```
+
+ファイルをリポジトリに追加するには、`git add`を使用してファイルをステージングします（要するに、準備段階状況にする）。ステージングは、将来参照するためにノートのページに付箋を貼るようなものです。
+
+この状況だと、ファイルはコミット（確定）する準備ができました。
+
+コミットは、ノートの目次に変更内容を記録するようなものです。これにより、特定の変更を簡単に見つけて参照することができます。
+
+リポジトリ内のファイルの現在の状態を保存するには、それらをコミット（確定）する必要があります。次のコマンドを入力します。
+
+```sh
+git commit -m "test.txtを含む初期コミット"
+```
+
+`-m`フラグを使用すると、コミット（確定）にメッセージを含めることができます。このメッセージには、このコミットに含まれる変更内容を記述する必要があります。ここでは、「test.txtを含む初期コミット」としています。
+
+### ブランチ（枝分かれ）
+
+次に、新しいブランチ（枝分かれ）を作成しましょう。Gitのブランチを使用すると、プロジェクトの異なるバージョンを同時に作業できます。ブランチを、元の物語を変更せずに新しいアイデアを試すためのノートの別のセクションと考えてください。次のコマンドを入力して、「new-feature」という名前の新しいブランチを作成します。
+
+```sh
+git branch new-feature
+```
+
+この新しいブランチ（枝分かれ）に切り替えるには、次のコマンドを入力します。
+
+```sh
+git checkout new-feature
+```
+
+これで、「new-feature」ブランチ（枝分かれ）にいます。`test.txt`ファイルに変更を加えましょう。テキストエディタで`test.txt`を開き、次のテキストに変更して保存します。
+
+```
+Hello World: Version 2
+```
+
+ファイルを保存した後、変更を追加してコミット（確定）します。
+
+```sh
+git add test.txt
+git commit -m "Updated to Version 2"
+```
+
+次に、メインブランチに戻って違いを確認しましょう。メインブランチに戻るには、次のコマンドを入力します。
+
+```sh
+git checkout main
+```
+
+"main"ブランチと "new-feature"ブランチの `test.txt` ファイルのバージョンの違いを確認するには、次のコマンドを使用します。
+
+```sh
+git diff new-feature test.txt
+```
+
+このコマンドは、「new-feature」ブランチの `test.txt` ファイルと現在のブランチ（「main」）の `test.txt` ファイルの違いを表示します。これは、ノートの異なるセクションにある物語の草稿を比較するようなものです。
+
+おめでとうございます！これで成功しました：
+
+- Gitリポジトリ（保管庫）を作成しました。
+- `git add` を使用してファイルを追加しました（ステージング）。
+- `git commit` を使用してファイルをコミット（確定）しました。
+- `git branch` を使用してブランチ（枝分かれ）を作成しました。
+- `git checkout` を使用してブランチ（切り替え）をしました。
+- `git diff` を使用して異なるブランチのファイルの違い（差分）を確認しました。
+
+もっとGitを使って実験してみて、他に何ができるかを見てみてください！
+
+[3] マイクロソフトワードは使用しないでください。詳しく説明しませんが、Wordは.doc（バイナリ形式）や.docx（XMLベースで、複雑さを導入します）などの形式で保存できます。プレーンテキストエディタを使用すると、より幸せになります。

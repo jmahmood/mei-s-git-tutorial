@@ -318,3 +318,85 @@ git diff new-feature test.txt
 もっとGitを使って実験してみて、他に何ができるかを見てみてください！
 
 [3] マイクロソフトワードは使用しないでください。詳しく説明しませんが、Wordは.doc（バイナリ形式）や.docx（XMLベースで、複雑さを導入します）などの形式で保存できます。プレーンテキストエディタを使用すると、より幸せになります。
+
+# Let's clone this repository!
+In the step above, you create your git repository. In this step, you can learn how to use the git repository which some other porson create and upload to the internet.
+This tutorial is in the git repository, Let's try clone this repository.
+
+[4] We use the word clone to copy data from git repository created by some other person.
+
+First, please make directory in your PC somewhere you want in WLS .
+
+For example: `<yourUbuntuName>@<yourUserName>/git_tutorial/`
+
+Next, please copy the repogitory path.
+![alt text](image.png)
+
+And move directory which you created first in terminal.
+
+``` sh
+cd git_tutorial
+```
+
+Finally, use the command below.
+
+``` sh
+git clone <gitRepository>
+```
+
+Please set you copied path to `<gitRepository>`.
+
+Congratulations! You could clone data from git repository.
+
+
+# このgitリポジトリをクローンしてみよう！
+前のステップでは、自分のgitリポジトリを作成しました。このステップでは、他の人が作成してインターネットで公開したレポジトリの使い方を学びましょう。
+このチュートリアルのテキストは、gitリポジトリです。このリポジトリをクローンしましょう！
+
+[4] リポジトリのデータを自分のパソコンにコピーすることをクローンするといいます。
+
+まずは最初に、WSL上であればどこでもいいので、クローンしてきたデータを格納するディレクトリを作成しましょう。
+
+例：`<yourUbuntuName>@<yourUserName>/git_tutorial/`
+
+次にリポジトリのパスをコピーします。
+![alt text](image.png)
+
+ターミナルから、先ほど作成したディレクトリに移動します。
+
+``` sh
+cd git_tutorial
+```
+
+最後に下記のコマンドを実行します。
+
+``` sh
+git clone <gitRepository>
+```
+
+`<gitRepository>`にはコピーしたリポジトリパスを設定してください。
+
+おめでとうございます！！これでgitリポジトリのクローンは完了です！！
+
+# Let's upload your changes to the git reposigory you cloned.
+You cannot reflect your changes on git repository only updating cloned files.
+In this step, you can learn how to update files on git repository.
+
+Fist, please open the file you cloned the step before using VScode.
+
+Then, please change something using VScode and please run the command you learn the before step.
+
+After you commited your changing please run the command below.
+
+``` sh
+git push --set-upstream origin <yourBranchName>
+```
+
+[5] When you push first after creating new branch, you need to `--set-upstream`. After first push, you can remove it from push command.
+
+You successed upload your changing to the git repository.
+
+Then you need to make request to refrect your changing which called PR.
+
+PR can be created from browser.
+

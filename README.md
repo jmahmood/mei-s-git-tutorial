@@ -330,7 +330,7 @@ First, please make directory in your PC somewhere you want in WLS .
 For example: `<yourUbuntuName>@<yourUserName>/git_tutorial/`
 
 Next, please copy the repogitory path.
-![alt text](image.png)
+![alt text](asset/image.png)
 
 And move directory which you created first in terminal.
 
@@ -360,7 +360,7 @@ Congratulations! You could clone data from git repository.
 例：`<yourUbuntuName>@<yourUserName>/git_tutorial/`
 
 次にリポジトリのパスをコピーします。
-![alt text](image.png)
+![alt text](asset/image.png)
 
 ターミナルから、先ほど作成したディレクトリに移動します。
 
@@ -380,6 +380,7 @@ git clone <gitRepository>
 
 # Let's upload your changes to the git reposigory you cloned.
 You cannot reflect your changes on git repository only updating cloned files.
+
 In this step, you can learn how to update files on git repository.
 
 Fist, please open the file you cloned the step before using VScode.
@@ -394,9 +395,77 @@ git push --set-upstream origin <yourBranchName>
 
 [5] When you push first after creating new branch, you need to `--set-upstream`. After first push, you can remove it from push command.
 
+If you got the error like below, please ask Jawaad-san
+
+```
+remote: Permission to jmahmood/mei-s-git-tutorial.git denied to <yourGitUserName>.
+fatal: unable to access 'https://github.com/jmahmood/mei-s-git-tutorial.git/': The requested URL returned error: 403
+```
+
 You successed upload your changing to the git repository.
 
-Then you need to make request to refrect your changing which called PR.
+Then you need to make request to refrect your changing which called PR to update main branch.
 
 PR can be created from browser.
 
+Please following below
+
+![alt text](asset/image-1.png)
+
+![alt text](asset/image-2.png)
+
+[6] select branch which you pushed.
+
+![alt text](asset/image-3.png)
+
+Please fill the description and set Jawaad-san as Reviewer.
+
+Finally, you successed to create PR!
+
+After Jawaad-san checked your change and approved, your change is merged into main branch.
+
+# クローンしたリポジトリに、変更をアップロードしよう！
+クローンしてきたファイルを変更しただけでは、リポジトリのデータへあなたの変更を反映することはできません。
+
+このステップでは、gitリポジトリ上のデータをどうやって更新するのか学んでいきます。
+
+まず、前のステップでクローンしたフォルダをVSCodeを使って開きましょう。
+
+フォルダを開いたら、なんでもいいので更新してみて、前のステップで学んだgitのコマンドを実行してください。
+
+変更をコミットしたら、下記のコマンドを実行しましょう。
+
+``` sh
+git push --set-upstream origin <yourBranchName>
+```
+
+[5] ブランチを作成して、最初にプッシュするときは、`--set-upstream`が必要です。1回プッシュしたら、そのあとは必要ありません。
+
+下記のようなエラーが出たら、Jawaadさん似連絡してください。
+
+```
+remote: Permission to jmahmood/mei-s-git-tutorial.git denied to <yourGitUserName>.
+fatal: unable to access 'https://github.com/jmahmood/mei-s-git-tutorial.git/': The requested URL returned error: 403
+```
+
+gitのリポジトリに変更を反映させることができました！
+
+そうしたら、新しい変更をメインブランチに反映させるために、PRを作成します。
+
+PRはブラウザから作成できます。
+
+下記のステップに従って操作してください。
+
+![alt text](asset/image-1.png)
+
+![alt text](asset/image-2.png)
+
+[6] 先ほどpushしたブランチを選択してください。
+
+![alt text](asset/image-3.png)
+
+Descriptionを入力して、レビュワーにJawaadさんを選択したら`Create pull request`ボタンをクリックしましょう！！
+
+おめでとうございます！PRの作成に成功しました！！
+
+Jawaadさんが確認して、承認したら、変更がメインブランチに反映されます！！
